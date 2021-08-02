@@ -3,6 +3,7 @@ package guru.qa;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import pages.PracticeFormPage;
 
 import java.io.File;
 
@@ -10,7 +11,9 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticeFormTestsCopy {
+public class PracticeFormTestsWithPageObjects {
+
+    PracticeFormPage practiceFormPage = new PracticeFormPage();
 
     @BeforeAll
     static void setup() {
@@ -21,10 +24,11 @@ public class PracticeFormTestsCopy {
 
     @Test
     void positiveFillTest() {
-        open("/automation-practice-form");
-        $("#firstName").setValue("Ulyanov");
-        $("#lastName").setValue("Sergey");
-        $("#userEmail").setValue("I1T@qa.ru");
+        practiceFormPage.openPage();
+        practiceFormPage.firstName("Ulyanov");
+        practiceFormPage.lastName("Sergey");
+        practiceFormPage.email("I1T@qa.ru");
+
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("1234567890");
         $("#dateOfBirthInput").click();
