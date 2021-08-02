@@ -29,6 +29,7 @@ public class PracticeFormTestsWithPageObjects {
         practiceFormPage.lastName("Sergey");
         practiceFormPage.email("I1T@qa.ru");
 
+
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("1234567890");
         $("#dateOfBirthInput").click();
