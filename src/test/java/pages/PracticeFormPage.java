@@ -1,6 +1,5 @@
 package pages;
 
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -24,10 +23,14 @@ public class PracticeFormPage {
         return this;
     }
 
-    public PracticeFormPage email(String email) {
+    public void email(String email) {
         $("#userEmail").setValue(email);
 
-        return this;
+    }
+
+    public void number(String number) {
+        $("#userNumber").setValue(number);
+
     }
 
 }
