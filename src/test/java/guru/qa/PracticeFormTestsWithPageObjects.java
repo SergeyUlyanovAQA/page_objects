@@ -1,3 +1,4 @@
+
 package guru.qa;
 
 import com.codeborne.selenide.Configuration;
@@ -24,10 +25,14 @@ public class PracticeFormTestsWithPageObjects {
 
     @Test
     void positiveFillTest() {
-        practiceFormPage.openPage();
-        practiceFormPage.firstName("Ulyanov");
-        practiceFormPage.lastName("Sergey");
-        practiceFormPage.email("I1T@qa.ru");
+        practiceFormPage.openPage()
+                .firstName("Ulyanov")
+                .lastName("Sergey")
+                .email("I1T@qa.ru");
+
+
+
+
 
 
         $("#genterWrapper").$(byText("Male")).click();

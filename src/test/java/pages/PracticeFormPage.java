@@ -6,20 +6,28 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormPage {
 
-    public void openPage() {
+    public PracticeFormPage openPage() {
         open("/automation-practice-form");
+
+        return this;
     }
 
-    public void firstName(String firstName) {
+    public PracticeFormPage firstName(String firstName) {
         $("#firstName").setValue(firstName);
+
+        return this;
     }
 
-    public void lastName(String lastName) {
+    public PracticeFormPage lastName(String lastName) {
         $("#lastName").setValue(lastName);
+
+        return this;
     }
 
-    public void email(String email) {
+    public PracticeFormPage email(String email) {
         $("#userEmail").setValue(email);
+
+        return this;
     }
 
 }
