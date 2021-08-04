@@ -1,10 +1,14 @@
 package pages;
 
+import components.Calendar;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormPage {
+
+    private Calendar calendar = new Calendar();
 
     public PracticeFormPage openPage() {
         open("/automation-practice-form");
@@ -38,6 +42,12 @@ public class PracticeFormPage {
 
     public PracticeFormPage phone(String phone) {
         $("#userNumber").setValue(phone);
+
+        return this;
+    }
+
+    public PracticeFormPage setDateOfBirth(String day, String month, String year) {
+        calendar.setDate(day, month, year);
 
         return this;
     }

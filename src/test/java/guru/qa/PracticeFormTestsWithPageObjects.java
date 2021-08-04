@@ -30,7 +30,8 @@ public class PracticeFormTestsWithPageObjects {
                 .lastName("Sergey")
                 .email("I1T@qa.ru")
                 .gender("Male")
-                .phone("1234567890");
+                .phone("1234567890")
+                .setDateOfBirth("17", "February", "1990");
         practiceFormPage.gender("Male")
                 .phone("1234567890");
 
