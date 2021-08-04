@@ -4,9 +4,10 @@ import components.Calendar;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class PracticeFormPage {
 
@@ -92,6 +93,29 @@ public class PracticeFormPage {
 
     public PracticeFormPage clickButton() {
         $("#submit").scrollTo().click();
+
+        return this;
+    }
+
+    public PracticeFormPage checkResultsTitle(String checkResultsTitle) {
+        $("#example-modal-sizes-title-lg").shouldHave(text (checkResultsTitle));
+
+        return this;
+    }
+
+    public PracticeFormPage checkResultsValue(String fullName, String email, String gender, String phone,
+                                              String birthDay, String subjects, String hobbies, String file,
+                                              String address, String stateAndCity) {
+        $x("//table//tr[1]/td[2]").shouldHave(text(fullName));
+        $x("//table//tr[2]/td[2]").shouldHave(text(email));
+        $x("//table//tr[3]/td[2]").shouldHave(text(gender));
+        $x("//table//tr[4]/td[2]").shouldHave(text(phone));
+        $x("//table//tr[5]/td[2]").shouldHave(text(birthDay));
+        $x("//table//tr[6]/td[2]").shouldHave(text(subjects));
+        $x("//table//tr[7]/td[2]").shouldHave(text(hobbies));
+        $x("//table//tr[8]/td[2]").shouldHave(text(file));
+        $x("//table//tr[9]/td[2]").shouldHave(text(address));
+        $x("//table//tr[10]/td[2]").shouldHave(text(stateAndCity));
 
         return this;
     }
