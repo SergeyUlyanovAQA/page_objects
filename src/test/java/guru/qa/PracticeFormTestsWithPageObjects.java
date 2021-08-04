@@ -31,26 +31,23 @@ public class PracticeFormTestsWithPageObjects {
                 .email("I1T@qa.ru")
                 .gender("Male")
                 .phone("1234567890")
-                .setDateOfBirth("17", "February", "1990");
+                .setDateOfBirth("17", "February", "1990")
+                .subjects("Computer Science")
+                .hobbies("Sports")
+                .picture("src/test/resources/DZ1.png")
+                .address("Saratov")
+                .state("NCR")
+                .city("Delhi");
+        practiceFormPage.clickButton();
+
+
+
+
+
+
         practiceFormPage.gender("Male")
                 .phone("1234567890");
 
-
-
-
-
-
-
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("February");
-        $(".react-datepicker__year-select").selectOption("1990");
-        $(".react-datepicker__day--017").click();
-        $("#subjectsInput").setValue("Computer Science").pressEnter();
-        $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/DZ1.png"));
-        $("#currentAddress").setValue("Saratov");
-        $("#react-select-3-input").setValue("NCR").pressEnter();
-        $("#react-select-4-input").setValue("Delhi").pressEnter();
         $("#submit").scrollTo().click();
 
         $("#example-modal-sizes-title-lg").shouldHave(text ("Thanks for submitting the form"));
