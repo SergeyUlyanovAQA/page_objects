@@ -28,9 +28,17 @@ public class PracticeFormTestsWithPageObjects {
         practiceFormPage.openPage()
                 .firstName("Ulyanov")
                 .lastName("Sergey")
-                .email("I1T@qa.ru");
-        $("#genterWrapper").$(byText("Male")).click();
-        practiceFormPage.number("1234567890");
+                .email("I1T@qa.ru")
+                .gender("Male")
+                .phone("1234567890");
+        practiceFormPage.gender("Male")
+                .phone("1234567890");
+
+
+
+
+
+
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("February");
